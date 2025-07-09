@@ -59,6 +59,14 @@ class ViewController: UIViewController, WKNavigationDelegate{
         alertController.addAction(UIAlertAction(title: WebsiteEnum.google.rawValue, style:.default, handler: { alertaction in
             self.openPage(action: alertaction)
         }))
+        
+        alertController.addAction(UIAlertAction(title: WebsiteEnum.invalid.rawValue, style:.default, handler: { alertaction in
+            self.openPage(action: alertaction)
+            let ac = UIAlertController(title: "It's blocked❌", message: " you can't access this website🚫", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self.present(ac, animated: true)
+        }))
+        
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(alertController, animated: true)

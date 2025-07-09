@@ -12,5 +12,5 @@ enum WebsiteEnum: String {
     case google = "hackingwithswift.com"
     case apple = "apple.com"
     case x = "https://x.com/home"
-    
+    case invalid = "my_blog_name.blogspot.com/p/publishing.html"
 }
