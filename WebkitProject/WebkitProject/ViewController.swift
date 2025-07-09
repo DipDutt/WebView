@@ -52,6 +52,7 @@ class ViewController: UIViewController, WKNavigationDelegate{
     
     // MARK: - Create openTapped method to show Aleart.
     @objc func openTapped() {
+        // create all alerts
         let alertController = UIAlertController(title: "Webpages📄", message: "click 🫵🏼 on website pages to enter the specific webpage", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: WebsiteEnum.apple.rawValue , style:.default, handler: { alertaction in
             self.openPage(action: alertaction)
