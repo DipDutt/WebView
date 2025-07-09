@@ -33,10 +33,13 @@ class ViewController: UIViewController, WKNavigationDelegate{
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target:webView, action: #selector(webView.reload))
+        let back = UIBarButtonItem(title: "webpage.goLeft",image:UIImage(systemName: "arrowshape.backward.fill"), target:nil, action:nil)
+        let forward = UIBarButtonItem(title: "webpage.goRight", image:UIImage(systemName: "arrowshape.forward.fill"), target:nil, action:nil)
         showPrgressView = UIProgressView(progressViewStyle: .default)
         showPrgressView.sizeToFit()
         let progressBarButtonItem = UIBarButtonItem(customView: showPrgressView)
-        toolbarItems = [spacer,refresh,progressBarButtonItem]
+        
+        toolbarItems = [refresh,progressBarButtonItem,spacer,back,forward ]
         navigationController?.isToolbarHidden = false
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
     }
